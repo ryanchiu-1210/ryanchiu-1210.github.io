@@ -1,0 +1,377 @@
+<!-- English translated by Niugnep65535. -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ryan Chiu - National Skill Competitions Participant</title>
+<meta name="description" content="Ryan Chiu's personal website. National Skill Competitions participant. Focused on C# and Android development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F6F3;
+    --ink: #1C1E22;
+    --ink-soft: #5B5F66;
+    --ink-faint: #8B8E93;
+    --line: #DEDCD5;
+    --accent: #2451B3;
+    --accent-soft: #EAF0FB;
+    --silver: #7C8087;
+    --bronze: #A0703C;
+    --honor: #6B6E73;
+    --max: 720px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Sans TC', sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+  }
+  a:hover, a:focus-visible {
+    border-bottom-color: var(--accent);
+  }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 96px 0 64px;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: rise 0.7s ease forwards;
+  }
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero .role {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0 0 18px;
+  }
+
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(40px, 7vw, 64px);
+    line-height: 1.05;
+    margin: 0 0 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero .goal {
+    font-size: 17px;
+    color: var(--ink);
+    max-width: 46ch;
+  }
+  .hero .goal strong {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* Sections */
+  section {
+    padding: 52px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0 0 24px;
+    letter-spacing: -0.01em;
+  }
+
+  .about p {
+    max-width: 58ch;
+    font-size: 16px;
+    color: var(--ink);
+  }
+
+  /* Skills */
+  .skill-group {
+    margin-bottom: 22px;
+  }
+  .skill-group:last-child { margin-bottom: 0; }
+
+  .skill-label {
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin: 0 0 10px;
+  }
+
+  .skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .pill {
+    font-size: 14px;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    color: var(--ink);
+    background: #fff;
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: var(--line);
+  }
+
+  .entry {
+    position: relative;
+    padding-bottom: 30px;
+  }
+  .entry:last-child { padding-bottom: 0; }
+
+  .entry::before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 5px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+
+  .entry-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+
+  .entry-edition {
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 2px 9px;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 500;
+  }
+  .badge.silver { background: var(--silver); }
+  .badge.bronze { background: var(--bronze); }
+  .badge.honor  { background: var(--honor); }
+
+  .entry-title {
+    font-size: 16px;
+    color: var(--ink);
+  }
+
+  /* Contact */
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .contact-row {
+    display: flex;
+    gap: 14px;
+    font-size: 16px;
+    align-items: baseline;
+  }
+  .contact-row .k {
+    color: var(--ink-faint);
+    font-size: 13px;
+    min-width: 64px;
+  }
+
+  footer {
+    padding: 40px 0 60px;
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 480px) {
+    .hero { padding: 64px 0 44px; }
+    section { padding: 40px 0; }
+  }
+
+  /* Corner registration marks — fills the side margins on wide screens */
+  .crop-marks { display: none; }
+  @media (min-width: 900px) {
+    .crop-marks { display: block; }
+    .mark {
+      position: fixed;
+      width: 18px;
+      height: 18px;
+      pointer-events: none;
+    }
+    .mark::before, .mark::after {
+      content: '';
+      position: absolute;
+      background: var(--ink-faint);
+      opacity: 0.4;
+    }
+    .mark::before { width: 18px; height: 1px; }
+    .mark::after { width: 1px; height: 18px; }
+    .tl { top: 28px; left: 28px; }
+    .tl::before, .tl::after { top: 0; left: 0; }
+    .tr { top: 28px; right: 28px; }
+    .tr::before, .tr::after { top: 0; right: 0; }
+    .bl { bottom: 28px; left: 28px; }
+    .bl::before, .bl::after { bottom: 0; left: 0; }
+    .br { bottom: 28px; right: 28px; }
+    .br::before, .br::after { bottom: 0; right: 0; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="crop-marks" aria-hidden="true">
+    <span class="mark tl"></span>
+    <span class="mark tr"></span>
+    <span class="mark bl"></span>
+    <span class="mark br"></span>
+  </div>
+
+  <div class="wrap">
+    <header class="hero">
+      <p class="role">National Skill Competitions Participant · Business Software Design</p>
+      <h1>Ryan Chiu</h1>
+      <p class="goal">The current goal is to challenge <strong>the national team selection</strong> and continue to accumulate strength in software development and competition.。</p>
+    </header>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <p>Senior high school student.</p>
+      <p>National Skill Competitions Participant. The goal is to challenge the national team selection.</p>
+      <p>Focused on desktop software and mobile software development. (Because the job category of business software design is just too demanding.)</p>
+      <p>The code of my project was either written by Claude or speghetti code by myself.</p>
+    </section>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <div class="skill-group">
+        <p class="skill-label">Languages</p>
+        <div class="skill-pills">
+          <span class="pill">C#</span>
+          <span class="pill">Kotlin</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-label">Tools</p>
+        <div class="skill-pills">
+          <span class="pill">SSMS</span>
+          <span class="pill">Android Studio</span>
+          <span class="pill">VS Code</span>
+          <span class="pill">Visual Studio</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="competitions">
+      <h2>Competition Experience</h2>
+      <div class="timeline">
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-edition">56th National Skills Competition</span>
+            <span class="badge silver">Sliver Medal</span>
+          </div>
+          <p class="entry-title">Junior Group Business Software Design</p>
+        </div>
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-edition">56th National Skills Competition Northern Region</span>
+            <span class="badge silver">Sliver Medal</span>
+          </div>
+          <p class="entry-title">Junior Group Business Software Design</p>
+        </div>
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-edition">55th National Skills Competition</span>
+            <span class="badge honor">Honor</span>
+          </div>
+          <p class="entry-title">Junior Group Autonomous Mobile Robot</p>
+        </div>
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-edition">55th National Skills Competition Northern Region</span>
+            <span class="badge bronze">Bronze Medal</span>
+          </div>
+          <p class="entry-title">Junior Group Autonomous Mobile Robot</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Contact</h2>
+      <div class="contact-list">
+        <div class="contact-row">
+          <span class="k">Github</span>
+          <a href="https://github.com/ryanchiu-1210" target="_blank" rel="noopener">ryanchiu-1210</a>
+        </div>
+        <div class="contact-row">
+          <span class="k">Email</span>
+          <a href="mailto:ryan1210.chiu@gmail.com">ryan1210.chiu@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <span class="k">Discord</span>
+          <span>ryanchiu1210.</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      &copy; <span id="year"></span> ryanchiu-1210. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
